@@ -15,7 +15,7 @@ const footerLinks = [
       {footerLinks.map(({ link, icon }) => (
       <li>
           <a href={link} class:list={["motion-hover"]}>
-              <Image src={icon} alt={link} loading="eager" />
+              <Image src={icon} alt={link} loading="lazy" />
           </a>
       </li>
       ))}

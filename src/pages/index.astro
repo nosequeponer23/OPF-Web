@@ -1,8 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Etiqueta from '../components/Etiqueta.astro';
-import Boton1 from '../components/Boton1.astro';
-import Tarjeta1 from '../components/Tarjeta1.astro';
+import Boton from '../components/Boton.astro';
 import Tarjeta from '../components/Tarjeta.astro';
 ---
 
@@ -22,7 +21,7 @@ import Tarjeta from '../components/Tarjeta.astro';
     </div>
   </section>
 
-  <Tarjeta>
+  <Tarjeta class="motion-fadein">
     <h2>¿Qué es la OPF?</h2>
     <p>
       La Olimpiada Potosina de Física es un certamen anual dirigido a estudiantes de nivel medio superior en San Luis Potosí. Nuestro objetivo es promover el estudio de la física, identificar talentos jóvenes y seleccionar a los mejores perfiles para conformar la delegación estatal que participará en la Olimpiada Nacional.
@@ -34,24 +33,23 @@ import Tarjeta from '../components/Tarjeta.astro';
       <h2 class="centrado">Fechas Importantes</h2>
       <div class="grid-fechas">
         
-        <Tarjeta1 class="tarjeta-fecha">
+        <Tarjeta>
           <h3>Cierre de Inscripciones</h3>
           <p class="fecha-texto">[Pendiente]</p>
-        </Tarjeta1>
+        </Tarjeta>
 
 
         <! -- Ejemplo de fecha, pegar las etiquetas faltantes a las otras si quieren cfff -->
-        <Tarjeta1 class="tarjeta-fecha destacada motion-hover">
-          <div class="etiqueta-alerta">¡Próximamente!</div>
+        <Tarjeta titulo="¡Proximamente!" acento="naranja" alineado="center">
           <h3>Examen Selectivo Estatal</h3>
           <p class="fecha-texto principal">02 / 05 / 2026</p>
           <p class="hora-texto">10:00 a.m.</p>
-        </Tarjeta1>
+        </Tarjeta>
 
-        <Tarjeta1 class="tarjeta-fecha">
+        <Tarjeta>
           <h3>Inicio de Entrenamientos</h3>
           <p class="fecha-texto">[Pendiente]</p>
-        </Tarjeta1>
+        </Tarjeta>
 
       </div>
     </div>
@@ -64,8 +62,8 @@ import Tarjeta from '../components/Tarjeta.astro';
         <p>No importa si es tu primera vez participando. Ponemos a tu disposición material de estudio, el temario oficial y exámenes de años anteriores para que llegues con la mejor preparación.</p>
       </div>
       <div class="recursos-enlaces">
-        <Boton1 href="/temario" class="enlace-caja">Ver Temario Oficial &rarr;</Boton1>
-        <Boton1 href="/material" class="enlace-caja">Exámenes Anteriores &rarr;</Boton1>
+        <Boton href="/temario" class="enlace-caja">Ver Temario Oficial &rarr;</Boton1>
+        <Boton href="/material" class="enlace-caja">Exámenes Anteriores &rarr;</Boton1>
       </div>
     </div>
   </section>

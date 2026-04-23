@@ -10,7 +10,7 @@ import Bronce from '../assets/medallas/OPFBronce.png';
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSS80-GOI4CzYSU93h6tAARle7NjcbZGz-YVuArz2rElPvsSj8AsDzTKwqrDy1VhsYyf7TSoKIpIDaK/pub?gid=0&single=true&output=csv';
 
 // CAMBIAR A TRUE PARA PUBLICAR RESULTADOS
-const resultadosPublicados = true;
+const resultadosPublicados = false;
 
 interface Participante {
   nombre: string;
@@ -18,13 +18,10 @@ interface Participante {
   cal: number;
 }
 
-// E culos, alguien borró esto y salían errores cfff
 let podiog: any[] = [];
-let GRes: any[] = []; //Che astro cómo chilla con el TypeScript
+let GRes: any[] = [];
 const Medallas = [Oro, Plata, Bronce];
 const NPodio = ["1er Lugar", "2do Lugar", "3er Lugar"];
-// ====================================================
-
 
 if (resultadosPublicados) { try{
   const response = await fetch(SHEET_URL);
@@ -65,7 +62,7 @@ if (resultadosPublicados) { try{
 
         <section class="podio">
           {podiog.map((participante) => (
-            <Tarjeta class="tarjeta-ganador" hover={true}>
+            <Tarjeta hover={true}>
               <div class="medalla">
                 <Image src={participante.medalla} alt={`Medalla de ${participante.puesto}`} />
               </div>
@@ -124,12 +121,11 @@ if (resultadosPublicados) { try{
 
   .titulo {
     font-size: 2.8rem;
-    color: var(--verde);
+    color: var(--azulUaslp);
     margin-bottom: 0.5rem;
   }
 
   .subtitulo {
-    color: var(--naranja);
     font-size: 1.2rem;
   }
 
@@ -141,23 +137,11 @@ if (resultadosPublicados) { try{
     margin-bottom: 4rem;
   }
 
-  .tarjeta-ganador {
-    flex: 1 1 280px;
-    background-color: var(--crema); /* Sobrescribimos el fondo blanco de la tarjeta */
-  }
-
-  .tarjeta-ganador h2 {
-    color: var(--negro);
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem 0;
-  }
-
   .escuela {
     color: var(--verde);
     font-weight: bold;
     margin-top: 0.5rem;
   }
-
 
   .puesto-texto {
     color: var(--dorado);
